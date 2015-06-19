@@ -1,3 +1,2 @@
 # cloud
-unity3d prototype for bham game dev meetup
-Be the cloud. Save the city... or not.
+Do not edit the Master scene until you let everyone else know that you are working on it. Let them all know when you are finished.
