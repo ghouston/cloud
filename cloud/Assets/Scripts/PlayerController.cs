@@ -7,8 +7,6 @@ public class PlayerController : MonoBehaviour
 	public bool
 		facingRight = true;
 	[HideInInspector]
-	public bool
-		jump = false;
 	public float moveForce = 365f;
 	public float maxSpeed = 5f;
 	public float jumpForce = 1000f;
@@ -31,34 +29,34 @@ public class PlayerController : MonoBehaviour
 	void Update ()
 	{
 		//grounded = Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("Ground"));
-		
-		if (Input.GetButtonDown ("Jump")) { //}&& grounded) {
-			jump = true;
-		}
+
+
 	}
 	
 	void FixedUpdate ()
 	{
 		float h = Input.GetAxis ("Horizontal");
+		float v = Input.GetAxis ("Vertical");
 		
 		//anim.SetFloat ("Speed", Mathf.Abs (h));
 		
 		if (h * rb2d.velocity.x < maxSpeed)
 			rb2d.AddForce (Vector2.right * h * moveForce);
+
+		if (v * rb2d.velocity.y < maxSpeed)
+			rb2d.AddForce (Vector2.up * v * moveForce);
 		
 		if (Mathf.Abs (rb2d.velocity.x) > maxSpeed)
 			rb2d.velocity = new Vector2 (Mathf.Sign (rb2d.velocity.x) * maxSpeed, rb2d.velocity.y);
+
+		if (Mathf.Abs (rb2d.velocity.y) > maxSpeed)
+			rb2d.velocity = new Vector2 (rb2d.velocity.x, Mathf.Sign (rb2d.velocity.y) * maxSpeed);
 		
 		if (h > 0 && !facingRight)
 			Flip ();
 		else if (h < 0 && facingRight)
 			Flip ();
-		
-		if (jump) {
-			//anim.SetTrigger ("Jump");
-			rb2d.AddForce (new Vector2 (0f, jumpForce));
-			jump = false;
-		}
+
 	}
 	
 	
