@@ -13,7 +13,7 @@ GameObject:
   - 61: {fileID: 6130628}
   - 114: {fileID: 11444624}
   m_Layer: 4
-  m_Name: WaterDrop
+  m_Name: WaterDrop Old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 194076}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .980000019, y: -.930000007, z: 0}
-  m_LocalScale: {x: .209999993, y: .170000002, z: 1}
+  m_LocalScale: {x: 1.0058136, y: 4.90615988, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -94,7 +94,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bc6d8d52ab73a47eda295cb6b5b1da51, type: 3}
+  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: .183823526, g: .493407726, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
